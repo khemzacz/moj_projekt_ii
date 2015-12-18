@@ -1,0 +1,27 @@
+
+test:
+    path:     menu
+    defaults: { _controller: AppBundle:Test:test }
+lucky:
+    path:     lucky/number/{count}
+    defaults: { _controller: AppBundle:Lucky:number, count:15}
+    requirements:
+        count:  \d+ #liczba, dlugosc 1 znak lub wiecej
+lucky2:
+    path:     api/lucky/number
+    defaults: { _controller: AppBundle:Lucky:apiNumber }
+ostronie:
+    path:     /ostronie
+    defaults: { _controller: AppBundle:ostronie:ostronie }
+
+filmy:
+    path:     /filmy
+    defaults: { _controller: AppBundle:filmy:filmy }
+
+ksiazki:
+    path:     /ksiazki
+    defaults: { _controller: AppBundle:ksiazki:ksiazki }
+
+gry:
+    path:     /gry
+    defaults: { _controller: AppBundle:gry:gry }
