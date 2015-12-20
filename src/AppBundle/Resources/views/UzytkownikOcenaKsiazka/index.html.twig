@@ -1,0 +1,39 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>UzytkownikOcenaKsiazka list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Iduzocks</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('uzytkownikocenaksiazka_show', { 'id': entity.iduzocks }) }}">{{ entity.iduzocks }}</a></td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('uzytkownikocenaksiazka_show', { 'id': entity.iduzocks }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('uzytkownikocenaksiazka_edit', { 'id': entity.iduzocks }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('uzytkownikocenaksiazka_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

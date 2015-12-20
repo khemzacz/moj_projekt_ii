@@ -1,0 +1,29 @@
+AppBundle\Entity\Ksiazka:
+    type: entity
+    table: ksiazka
+    indexes:
+        fk_Ksiazka_Gatunek1_idx:
+            columns:
+                - Gatunek_idGatunek
+    id:
+        idksiazka:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idKsiazka
+            generator:
+                strategy: IDENTITY
+    manyToOne:
+        gatunekgatunek:
+            targetEntity: Gatunek
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Gatunek_idGatunek:
+                    referencedColumnName: idGatunek
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

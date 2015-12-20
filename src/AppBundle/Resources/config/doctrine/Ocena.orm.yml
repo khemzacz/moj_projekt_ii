@@ -1,0 +1,22 @@
+AppBundle\Entity\Ocena:
+    type: entity
+    table: ocena
+    id:
+        idocena:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idOcena
+            generator:
+                strategy: IDENTITY
+    fields:
+        ocena:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+            column: Ocena
+    lifecycleCallbacks: {  }

@@ -1,0 +1,30 @@
+uzytkownikocenagra:
+    path:     /
+    defaults: { _controller: "AppBundle:UzytkownikOcenaGra:index" }
+
+uzytkownikocenagra_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:UzytkownikOcenaGra:show" }
+
+uzytkownikocenagra_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:UzytkownikOcenaGra:new" }
+
+uzytkownikocenagra_create:
+    path:     /create
+    defaults: { _controller: "AppBundle:UzytkownikOcenaGra:create" }
+    methods:  POST
+
+uzytkownikocenagra_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:UzytkownikOcenaGra:edit" }
+
+uzytkownikocenagra_update:
+    path:     /{id}/update
+    defaults: { _controller: "AppBundle:UzytkownikOcenaGra:update" }
+    methods:  [POST, PUT]
+
+uzytkownikocenagra_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:UzytkownikOcenaGra:delete" }
+    methods:  [POST, DELETE]

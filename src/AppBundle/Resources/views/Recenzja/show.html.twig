@@ -1,0 +1,32 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Recenzja</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Idrecenzja</th>
+                <td>{{ entity.idrecenzja }}</td>
+            </tr>
+            <tr>
+                <th>Tresc</th>
+                <td>{{ entity.tresc }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('recenzja') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('recenzja_edit', { 'id': entity.idrecenzja }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

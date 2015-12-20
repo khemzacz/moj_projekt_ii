@@ -1,0 +1,30 @@
+uzytkownikocenafilm:
+    path:     /
+    defaults: { _controller: "AppBundle:UzytkownikOcenaFilm:index" }
+
+uzytkownikocenafilm_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:UzytkownikOcenaFilm:show" }
+
+uzytkownikocenafilm_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:UzytkownikOcenaFilm:new" }
+
+uzytkownikocenafilm_create:
+    path:     /create
+    defaults: { _controller: "AppBundle:UzytkownikOcenaFilm:create" }
+    methods:  POST
+
+uzytkownikocenafilm_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:UzytkownikOcenaFilm:edit" }
+
+uzytkownikocenafilm_update:
+    path:     /{id}/update
+    defaults: { _controller: "AppBundle:UzytkownikOcenaFilm:update" }
+    methods:  [POST, PUT]
+
+uzytkownikocenafilm_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:UzytkownikOcenaFilm:delete" }
+    methods:  [POST, DELETE]

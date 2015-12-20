@@ -1,0 +1,55 @@
+AppBundle\Entity\Gra:
+    type: entity
+    table: gra
+    indexes:
+        fk_Gra_Deweloper1_idx:
+            columns:
+                - Deweloper_idDeweloper
+        fk_Gra_Producent1_idx:
+            columns:
+                - Producent_idProducent
+        fk_Gra_Gatunek1_idx:
+            columns:
+                - Gatunek_idGatunek1
+    id:
+        idgra:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            column: idGra
+            generator:
+                strategy: IDENTITY
+    manyToOne:
+        deweloperdeweloper:
+            targetEntity: Deweloper
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Deweloper_idDeweloper:
+                    referencedColumnName: idDeweloper
+            orphanRemoval: false
+        producentproducent:
+            targetEntity: Producent
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Producent_idProducent:
+                    referencedColumnName: idProducent
+            orphanRemoval: false
+        gatunekgatunek1:
+            targetEntity: Gatunek
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Gatunek_idGatunek1:
+                    referencedColumnName: idGatunek
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

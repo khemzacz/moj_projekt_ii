@@ -1,0 +1,68 @@
+AppBundle\Entity\UzytkownikOcenaGra:
+    type: entity
+    table: uzytkownik_ocena_gra
+    indexes:
+        fk_Uzytkownik_Ocena_Gra_Ocena1_idx:
+            columns:
+                - Ocena_idOcena
+        fk_Uzytkownik_Ocena_Gra_Gra1_idx:
+            columns:
+                - Gra_idGra
+        fk_Uzytkownik_Ocena_Gra_Recenzja1_idx:
+            columns:
+                - Recenzja_idRecenzja
+        fk_Uzytkownik_Ocena_Gra_Uzytkownik1:
+            columns:
+                - Uzytkownik_idUzytkownik
+    id:
+        iduzocgr:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idUzOcGr
+            generator:
+                strategy: IDENTITY
+    manyToOne:
+        uzytkownikuzytkownik:
+            targetEntity: Uzytkownik
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Uzytkownik_idUzytkownik:
+                    referencedColumnName: idUzytkownik
+            orphanRemoval: false
+        ocenaocena:
+            targetEntity: Ocena
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Ocena_idOcena:
+                    referencedColumnName: idOcena
+            orphanRemoval: false
+        gragra:
+            targetEntity: Gra
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Gra_idGra:
+                    referencedColumnName: idGra
+            orphanRemoval: false
+        recenzjarecenzja:
+            targetEntity: Recenzja
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Recenzja_idRecenzja:
+                    referencedColumnName: idRecenzja
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

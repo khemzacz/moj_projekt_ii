@@ -1,0 +1,30 @@
+ksiazkaautor:
+    path:     /
+    defaults: { _controller: "AppBundle:KsiazkaAutor:index" }
+
+ksiazkaautor_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:KsiazkaAutor:show" }
+
+ksiazkaautor_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:KsiazkaAutor:new" }
+
+ksiazkaautor_create:
+    path:     /create
+    defaults: { _controller: "AppBundle:KsiazkaAutor:create" }
+    methods:  POST
+
+ksiazkaautor_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:KsiazkaAutor:edit" }
+
+ksiazkaautor_update:
+    path:     /{id}/update
+    defaults: { _controller: "AppBundle:KsiazkaAutor:update" }
+    methods:  [POST, PUT]
+
+ksiazkaautor_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:KsiazkaAutor:delete" }
+    methods:  [POST, DELETE]

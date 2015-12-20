@@ -1,0 +1,26 @@
+AppBundle\Entity\Gatunek:
+    type: entity
+    table: gatunek
+    uniqueConstraints:
+        idRodzaj_UNIQUE:
+            columns:
+                - idGatunek
+    id:
+        idgatunek:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idGatunek
+            generator:
+                strategy: IDENTITY
+    fields:
+        nazwa:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+            column: Nazwa
+    lifecycleCallbacks: {  }

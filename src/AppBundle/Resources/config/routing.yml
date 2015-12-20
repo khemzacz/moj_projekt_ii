@@ -1,3 +1,67 @@
+app_uzytkownikocenaksiazka:
+    resource: "@AppBundle/Resources/config/routing/uzytkownikocenaksiazka.yml"
+    prefix:   /uzytkownikocenaksiazka
+
+app_uzytkownikocenafilm:
+    resource: "@AppBundle/Resources/config/routing/uzytkownikocenafilm.yml"
+    prefix:   /uzytkownikocenafilm
+
+app_uzytkownik:
+    resource: "@AppBundle/Resources/config/routing/uzytkownik.yml"
+    prefix:   /uzytkownik
+
+app_ksiazkaautor:
+    resource: "@AppBundle/Resources/config/routing/ksiazkaautor.yml"
+    prefix:   /ksiazkaautor
+
+app_filmrezyser:
+    resource: "@AppBundle/Resources/config/routing/filmrezyser.yml"
+    prefix:   /filmrezyser
+
+app_uzytkownikocenagra:
+    resource: "@AppBundle/Resources/config/routing/uzytkownikocenagra.yml"
+    prefix:   /uzytkownikocenagra
+
+app_rezyser:
+    resource: "@AppBundle/Resources/config/routing/rezyser.yml"
+    prefix:   /rezyser
+
+app_recenzja:
+    resource: "@AppBundle/Resources/config/routing/recenzja.yml"
+    prefix:   /recenzja
+
+app_producent:
+    resource: "@AppBundle/Resources/config/routing/producent.yml"
+    prefix:   /producent
+
+app_ocena:
+    resource: "@AppBundle/Resources/config/routing/ocena.yml"
+    prefix:   /ocena
+
+app_ksiazka:
+    resource: "@AppBundle/Resources/config/routing/ksiazka.yml"
+    prefix:   /ksiazka
+
+app_gra:
+    resource: "@AppBundle/Resources/config/routing/gra.yml"
+    prefix:   /gra
+
+app_gatunek:
+    resource: "@AppBundle/Resources/config/routing/gatunek.yml"
+    prefix:   /gatunek
+
+app_film:
+    resource: "@AppBundle/Resources/config/routing/film.yml"
+    prefix:   /film
+
+app_deweloper:
+    resource: "@AppBundle/Resources/config/routing/deweloper.yml"
+    prefix:   /deweloper
+
+app_autor:
+    resource: "@AppBundle/Resources/config/routing/autor.yml"
+    prefix:   /autor
+
 
 test:
     path:     menu

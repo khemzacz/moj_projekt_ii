@@ -2,10 +2,13 @@
 
 {% block title %}AppBundle:Test:menu{% endblock %}
 
-{% block body %}
-    <h1>Witamy w menu głównym</h1>
-    <p><a href="ostronie">o stronie</a></p>
-    <p><a href="filmy">filmy</a></p>
-    <p><a href="ksiazki">książki</a></p>
-    <p><a href="gry">gry</a></p>
+{% block menu %}
+    <table border="1" style="width:100%">
+        <tr>
+            <td><a href="ostronie">o stronie</a></td>
+            <td><a href="filmy">filmy</a></td>
+            <td><a href="ksiazki">książki</a></td>
+            <td><a href="gry">gry</a></td>
+        </tr>
+    </table><br>
 {% endblock %}

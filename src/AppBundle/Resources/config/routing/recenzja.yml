@@ -1,0 +1,30 @@
+recenzja:
+    path:     /
+    defaults: { _controller: "AppBundle:Recenzja:index" }
+
+recenzja_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Recenzja:show" }
+
+recenzja_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Recenzja:new" }
+
+recenzja_create:
+    path:     /create
+    defaults: { _controller: "AppBundle:Recenzja:create" }
+    methods:  POST
+
+recenzja_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Recenzja:edit" }
+
+recenzja_update:
+    path:     /{id}/update
+    defaults: { _controller: "AppBundle:Recenzja:update" }
+    methods:  [POST, PUT]
+
+recenzja_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Recenzja:delete" }
+    methods:  [POST, DELETE]

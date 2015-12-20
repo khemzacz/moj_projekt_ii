@@ -1,0 +1,29 @@
+AppBundle\Entity\Film:
+    type: entity
+    table: film
+    indexes:
+        fk_Film_Gatunek1_idx:
+            columns:
+                - Gatunek_idGatunek1
+    id:
+        idfilm:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idFilm
+            generator:
+                strategy: IDENTITY
+    manyToOne:
+        gatunekgatunek1:
+            targetEntity: Gatunek
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Gatunek_idGatunek1:
+                    referencedColumnName: idGatunek
+            orphanRemoval: false
+    lifecycleCallbacks: {  }
