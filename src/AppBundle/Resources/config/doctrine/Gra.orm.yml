@@ -1,0 +1,49 @@
+AppBundle\Entity\Gra:
+    type: entity
+    table: gra
+    indexes:
+        fk_gra_gatunek1_idx:
+            columns:
+                - gatunek_idGatunek
+        fk_gra_rok_produkcji1_idx:
+            columns:
+                - rok_produkcji_idRokProdukcji
+    id:
+        idgra:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            column: idGra
+            generator:
+                strategy: IDENTITY
+    fields:
+        tytul:
+            type: string
+            nullable: false
+            length: 45
+            options:
+                fixed: false
+    manyToOne:
+        gatunekgatunek:
+            targetEntity: Gatunek
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                gatunek_idGatunek:
+                    referencedColumnName: idGatunek
+            orphanRemoval: false
+        rokProdukcjirokprodukcji:
+            targetEntity: RokProdukcji
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                rok_produkcji_idRokProdukcji:
+                    referencedColumnName: idRokProdukcji
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

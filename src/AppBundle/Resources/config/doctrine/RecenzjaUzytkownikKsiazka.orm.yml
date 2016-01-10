@@ -1,0 +1,54 @@
+AppBundle\Entity\RecenzjaUzytkownikKsiazka:
+    type: entity
+    table: recenzja_uzytkownik_ksiazka
+    indexes:
+        fk_recenzja_uzytkownik_ksiazka_recenzja1_idx:
+            columns:
+                - recenzja_idRecenzja
+        fk_recenzja_uzytkownik_ksiazka_ksiazka1_idx:
+            columns:
+                - ksiazka_idKsiazka
+        fk_recenzja_uzytkownik_ksiazka_fos_user1:
+            columns:
+                - fos_user_id
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    manyToOne:
+        recenzjarecenzja:
+            targetEntity: Recenzja
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                recenzja_idRecenzja:
+                    referencedColumnName: idRecenzja
+            orphanRemoval: false
+        fosUser:
+            targetEntity: FosUser
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                fos_user_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+        ksiazkaksiazka:
+            targetEntity: Ksiazka
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                ksiazka_idKsiazka:
+                    referencedColumnName: idKsiazka
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

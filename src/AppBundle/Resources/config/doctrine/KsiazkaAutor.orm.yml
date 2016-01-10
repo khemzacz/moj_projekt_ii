@@ -1,0 +1,41 @@
+AppBundle\Entity\KsiazkaAutor:
+    type: entity
+    table: ksiazka_autor
+    indexes:
+        fk_Ksiazka_Autor_Autor1_idx:
+            columns:
+                - Autor_idAutor
+        fk_Ksiazka_Autor_Ksiazka1:
+            columns:
+                - Ksiazka_idKsiazka
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    manyToOne:
+        ksiazkaksiazka:
+            targetEntity: Ksiazka
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Ksiazka_idKsiazka:
+                    referencedColumnName: idKsiazka
+            orphanRemoval: false
+        autorautor:
+            targetEntity: Autor
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Autor_idAutor:
+                    referencedColumnName: idAutor
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

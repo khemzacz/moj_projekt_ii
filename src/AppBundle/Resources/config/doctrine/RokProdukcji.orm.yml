@@ -1,0 +1,18 @@
+AppBundle\Entity\RokProdukcji:
+    type: entity
+    table: rok_produkcji
+    id:
+        idrokprodukcji:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idRokProdukcji
+            generator:
+                strategy: IDENTITY
+    fields:
+        rok:
+            type: date
+            nullable: true
+    lifecycleCallbacks: {  }

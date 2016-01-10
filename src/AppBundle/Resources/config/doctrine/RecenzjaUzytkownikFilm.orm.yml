@@ -1,0 +1,54 @@
+AppBundle\Entity\RecenzjaUzytkownikFilm:
+    type: entity
+    table: recenzja_uzytkownik_film
+    indexes:
+        fk_recenzja_uzytkownik_film_recenzja1_idx:
+            columns:
+                - recenzja_idRecenzja
+        fk_recenzja_uzytkownik_film_film1_idx:
+            columns:
+                - film_idFilm
+        fk_recenzja_uzytkownik_film_fos_user1:
+            columns:
+                - fos_user_id
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    manyToOne:
+        recenzjarecenzja:
+            targetEntity: Recenzja
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                recenzja_idRecenzja:
+                    referencedColumnName: idRecenzja
+            orphanRemoval: false
+        fosUser:
+            targetEntity: FosUser
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                fos_user_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+        filmfilm:
+            targetEntity: Film
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                film_idFilm:
+                    referencedColumnName: idFilm
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

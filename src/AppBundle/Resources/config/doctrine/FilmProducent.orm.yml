@@ -1,0 +1,41 @@
+AppBundle\Entity\FilmProducent:
+    type: entity
+    table: film_producent
+    indexes:
+        fk_film_producent_producent1_idx:
+            columns:
+                - producent_idProducent
+        fk_film_producent_film1:
+            columns:
+                - film_idFilm
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    manyToOne:
+        filmfilm:
+            targetEntity: Film
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                film_idFilm:
+                    referencedColumnName: idFilm
+            orphanRemoval: false
+        producentproducent:
+            targetEntity: Producent
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                producent_idProducent:
+                    referencedColumnName: idProducent
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

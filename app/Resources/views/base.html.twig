@@ -55,7 +55,7 @@
 
                     <ul class="nav navbar-nav navbar-right" >
                     {% if app.user %}
-                        <li>Witaj: {{ app.user.username }}<a href="{{ path('fos_user_security_logout') }}">Wyloguj</a></li>
+                        <li>Witaj: {{ app.user.username }}</li><li><a href="{{ path('fos_user_security_logout') }}">Wyloguj</a></li>
                     {% elseif not app.user %}
                         <li><a href="{{ path('fos_user_security_login') }}">Logowanie</a></li>
                         <li><a href="/register">Rejestracja</a></li>

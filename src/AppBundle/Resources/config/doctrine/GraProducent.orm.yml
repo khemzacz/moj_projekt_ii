@@ -1,0 +1,41 @@
+AppBundle\Entity\GraProducent:
+    type: entity
+    table: gra_producent
+    indexes:
+        fk_gra_producent_gra1_idx:
+            columns:
+                - gra_idGra
+        fk_gra_producent_producent1:
+            columns:
+                - producent_idProducent
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    manyToOne:
+        producentproducent:
+            targetEntity: Producent
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                producent_idProducent:
+                    referencedColumnName: idProducent
+            orphanRemoval: false
+        gragra:
+            targetEntity: Gra
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                gra_idGra:
+                    referencedColumnName: idGra
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

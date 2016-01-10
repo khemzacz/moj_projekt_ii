@@ -1,0 +1,21 @@
+AppBundle\Entity\Deweloper:
+    type: entity
+    table: deweloper
+    id:
+        iddeweloper:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idDeweloper
+            generator:
+                strategy: IDENTITY
+    fields:
+        nazwa:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }

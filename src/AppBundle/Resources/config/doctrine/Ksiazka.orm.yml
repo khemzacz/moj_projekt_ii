@@ -1,0 +1,55 @@
+AppBundle\Entity\Ksiazka:
+    type: entity
+    table: ksiazka
+    indexes:
+        fk_Ksiazka_Gatunek1_idx:
+            columns:
+                - Gatunek_idGatunek
+        fk_ksiazka_rok_produkcji1_idx:
+            columns:
+                - rok_produkcji_idRokProdukcji
+    id:
+        idksiazka:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idKsiazka
+            generator:
+                strategy: IDENTITY
+    fields:
+        tytul:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        ksiazkacol:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+    manyToOne:
+        gatunekgatunek:
+            targetEntity: Gatunek
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Gatunek_idGatunek:
+                    referencedColumnName: idGatunek
+            orphanRemoval: false
+        rokProdukcjirokprodukcji:
+            targetEntity: RokProdukcji
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                rok_produkcji_idRokProdukcji:
+                    referencedColumnName: idRokProdukcji
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

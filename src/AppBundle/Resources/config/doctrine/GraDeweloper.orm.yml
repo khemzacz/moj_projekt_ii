@@ -1,0 +1,41 @@
+AppBundle\Entity\GraDeweloper:
+    type: entity
+    table: gra_deweloper
+    indexes:
+        fk_gra_deweloper_deweloper1_idx:
+            columns:
+                - deweloper_idDeweloper
+        fk_gra_deweloper_gra1:
+            columns:
+                - gra_idGra
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    manyToOne:
+        gragra:
+            targetEntity: Gra
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                gra_idGra:
+                    referencedColumnName: idGra
+            orphanRemoval: false
+        deweloperdeweloper:
+            targetEntity: Deweloper
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                deweloper_idDeweloper:
+                    referencedColumnName: idDeweloper
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

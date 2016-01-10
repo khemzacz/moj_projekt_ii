@@ -1,0 +1,54 @@
+AppBundle\Entity\OcenaUzytkownikGra:
+    type: entity
+    table: ocena_uzytkownik_gra
+    indexes:
+        fk_ocena_uzytkownik_gra_ocena1_idx:
+            columns:
+                - ocena_idOcena
+        fk_ocena_uzytkownik_gra_fos_user1_idx:
+            columns:
+                - fos_user_id
+        fk_ocena_uzytkownik_gra_gra1:
+            columns:
+                - gra_idGra
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    manyToOne:
+        ocenaocena:
+            targetEntity: Ocena
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                ocena_idOcena:
+                    referencedColumnName: idOcena
+            orphanRemoval: false
+        gragra:
+            targetEntity: Gra
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                gra_idGra:
+                    referencedColumnName: idGra
+            orphanRemoval: false
+        fosUser:
+            targetEntity: FosUser
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                fos_user_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

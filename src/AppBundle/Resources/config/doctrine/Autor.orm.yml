@@ -1,0 +1,33 @@
+AppBundle\Entity\Autor:
+    type: entity
+    table: autor
+    uniqueConstraints:
+        idAutor_UNIQUE:
+            columns:
+                - idAutor
+    id:
+        idautor:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idAutor
+            generator:
+                strategy: IDENTITY
+    fields:
+        imie:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+            column: Imie
+        nazwisko:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+            column: Nazwisko
+    lifecycleCallbacks: {  }
