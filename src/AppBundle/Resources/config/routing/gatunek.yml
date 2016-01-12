@@ -1,0 +1,30 @@
+gatunek:
+    path:     /
+    defaults: { _controller: "AppBundle:Gatunek:index" }
+
+gatunek_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Gatunek:show" }
+
+gatunek_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Gatunek:new" }
+
+gatunek_create:
+    path:     /create
+    defaults: { _controller: "AppBundle:Gatunek:create" }
+    methods:  POST
+
+gatunek_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Gatunek:edit" }
+
+gatunek_update:
+    path:     /{id}/update
+    defaults: { _controller: "AppBundle:Gatunek:update" }
+    methods:  [POST, PUT]
+
+gatunek_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Gatunek:delete" }
+    methods:  [POST, DELETE]

@@ -1,0 +1,30 @@
+rezyser:
+    path:     /
+    defaults: { _controller: "AppBundle:Rezyser:index" }
+
+rezyser_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Rezyser:show" }
+
+rezyser_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Rezyser:new" }
+
+rezyser_create:
+    path:     /create
+    defaults: { _controller: "AppBundle:Rezyser:create" }
+    methods:  POST
+
+rezyser_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Rezyser:edit" }
+
+rezyser_update:
+    path:     /{id}/update
+    defaults: { _controller: "AppBundle:Rezyser:update" }
+    methods:  [POST, PUT]
+
+rezyser_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Rezyser:delete" }
+    methods:  [POST, DELETE]

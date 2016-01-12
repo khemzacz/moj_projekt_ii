@@ -1,0 +1,32 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Producent</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Idproducent</th>
+                <td>{{ entity.idproducent }}</td>
+            </tr>
+            <tr>
+                <th>Nazwa</th>
+                <td>{{ entity.nazwa }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('producent') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('producent_edit', { 'id': entity.idproducent }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

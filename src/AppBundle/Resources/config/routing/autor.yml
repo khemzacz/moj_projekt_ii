@@ -1,0 +1,30 @@
+autor:
+    path:     /
+    defaults: { _controller: "AppBundle:Autor:index" }
+
+autor_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Autor:show" }
+
+autor_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Autor:new" }
+
+autor_create:
+    path:     /create
+    defaults: { _controller: "AppBundle:Autor:create" }
+    methods:  POST
+
+autor_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Autor:edit" }
+
+autor_update:
+    path:     /{id}/update
+    defaults: { _controller: "AppBundle:Autor:update" }
+    methods:  [POST, PUT]
+
+autor_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Autor:delete" }
+    methods:  [POST, DELETE]

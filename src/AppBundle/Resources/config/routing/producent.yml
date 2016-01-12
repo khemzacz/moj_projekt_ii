@@ -1,0 +1,30 @@
+producent:
+    path:     /
+    defaults: { _controller: "AppBundle:Producent:index" }
+
+producent_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Producent:show" }
+
+producent_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Producent:new" }
+
+producent_create:
+    path:     /create
+    defaults: { _controller: "AppBundle:Producent:create" }
+    methods:  POST
+
+producent_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Producent:edit" }
+
+producent_update:
+    path:     /{id}/update
+    defaults: { _controller: "AppBundle:Producent:update" }
+    methods:  [POST, PUT]
+
+producent_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Producent:delete" }
+    methods:  [POST, DELETE]

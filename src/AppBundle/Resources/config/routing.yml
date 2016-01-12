@@ -1,3 +1,33 @@
+app_rezyser:
+    resource: "@AppBundle/Resources/config/routing/rezyser.yml"
+    prefix:   /rezyser
+
+app_producent:
+    resource: "@AppBundle/Resources/config/routing/producent.yml"
+    prefix:   /producent
+
+app_gra:
+    resource: "@AppBundle/Resources/config/routing/gra.yml"
+    prefix:   /gra
+
+app_gatunek:
+    resource: "@AppBundle/Resources/config/routing/gatunek.yml"
+    prefix:   /gatunek
+
+app_film:
+    resource: "@AppBundle/Resources/config/routing/film.yml"
+    prefix:   /film
+
+app_deweloper:
+    resource: "@AppBundle/Resources/config/routing/deweloper.yml"
+    prefix:   /deweloper
+
+app_autor:
+    resource: "@AppBundle/Resources/config/routing/autor.yml"
+    prefix:   /autor
+app_ksiazka:
+    resource: "@AppBundle/Resources/config/routing/ksiazka.yml"
+    prefix:   /ksiazka
 
 
 
