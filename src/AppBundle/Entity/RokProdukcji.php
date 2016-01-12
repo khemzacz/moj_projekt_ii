@@ -51,4 +51,9 @@ class RokProdukcji
     {
         return $this->rok;
     }
+
+    public function __toString()
+    {
+        return $this->getRok()."";
+    }
 }

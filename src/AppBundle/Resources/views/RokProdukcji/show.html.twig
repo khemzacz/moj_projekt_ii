@@ -1,0 +1,32 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>RokProdukcji</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Idrokprodukcji</th>
+                <td>{{ entity.idrokprodukcji }}</td>
+            </tr>
+            <tr>
+                <th>Rok</th>
+                <td>{{ entity.rok }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('rokprodukcji') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('rokprodukcji_edit', { 'id': entity.idrokprodukcji }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

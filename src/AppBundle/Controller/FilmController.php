@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use AppBundle\Entity\Film;
 use AppBundle\Form\FilmType;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 /**
  * Film controller.
@@ -31,7 +32,7 @@ class FilmController extends Controller
     }
     /**
      * Creates a new Film entity.
-     *
+     * @Security("has_role('ROLE_USER')")
      */
     public function createAction(Request $request)
     {
@@ -44,7 +45,7 @@ class FilmController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('film_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('film_show', array('id' => $entity->getIdfilm())));
         }
 
         return $this->render('AppBundle:Film:new.html.twig', array(
@@ -55,7 +56,7 @@ class FilmController extends Controller
 
     /**
      * Creates a form to create a Film entity.
-     *
+     * @Security("has_role('ROLE_USER')")
      * @param Film $entity The entity
      *
      * @return \Symfony\Component\Form\Form The form
@@ -74,7 +75,7 @@ class FilmController extends Controller
 
     /**
      * Displays a form to create a new Film entity.
-     *
+     * @Security("has_role('ROLE_USER')")
      */
     public function newAction()
     {
@@ -143,7 +144,7 @@ class FilmController extends Controller
     private function createEditForm(Film $entity)
     {
         $form = $this->createForm(new FilmType(), $entity, array(
-            'action' => $this->generateUrl('film_update', array('id' => $entity->getId())),
+            'action' => $this->generateUrl('film_update', array('id' => $entity->getIdfilm())),
             'method' => 'PUT',
         ));
 

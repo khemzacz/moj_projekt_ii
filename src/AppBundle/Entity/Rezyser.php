@@ -2,6 +2,8 @@
 
 namespace AppBundle\Entity;
 
+use Symfony\Component\Validator\Constraints as Assert;
+
 /**
  * Rezyser
  */
@@ -14,11 +16,21 @@ class Rezyser
 
     /**
      * @var string
+     * @Assert\Regex(
+     *     pattern="/\d/",
+     *     match=false,
+     *     message="Imie nie moze zawierac liczby"
+     * )
      */
     private $imie;
 
     /**
      * @var string
+     * @Assert\Regex(
+     *     pattern="/\d/",
+     *     match=false,
+     *     message="Nazwisko nie moze zawierac liczby"
+     * )
      */
     private $nazwisko;
 

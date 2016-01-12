@@ -6,7 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class RezyserType extends AbstractType
+class RokProdukcjiType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
@@ -15,8 +15,7 @@ class RezyserType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('imie', 'text')
-            ->add('nazwisko', 'text')
+            ->add('rok')
         ;
     }
     
@@ -26,7 +25,7 @@ class RezyserType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Rezyser'
+            'data_class' => 'AppBundle\Entity\RokProdukcji'
         ));
     }
 
@@ -35,6 +34,6 @@ class RezyserType extends AbstractType
      */
     public function getName()
     {
-        return 'appbundle_rezyser';
+        return 'appbundle_rokprodukcji';
     }
 }

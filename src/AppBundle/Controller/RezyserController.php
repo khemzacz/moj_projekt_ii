@@ -44,7 +44,7 @@ class RezyserController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('rezyser_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('rezyser_show', array('id' => $entity->getIdrezyser())));
         }
 
         return $this->render('AppBundle:Rezyser:new.html.twig', array(

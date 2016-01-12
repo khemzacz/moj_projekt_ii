@@ -5,37 +5,37 @@ namespace AppBundle\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-use AppBundle\Entity\Gatunek;
-use AppBundle\Form\GatunekType;
+use AppBundle\Entity\RokProdukcji;
+use AppBundle\Form\RokProdukcjiType;
 
 /**
- * Gatunek controller.
+ * RokProdukcji controller.
  *
  */
-class GatunekController extends Controller
+class RokProdukcjiController extends Controller
 {
 
     /**
-     * Lists all Gatunek entities.
+     * Lists all RokProdukcji entities.
      *
      */
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('AppBundle:Gatunek')->findAll();
+        $entities = $em->getRepository('AppBundle:RokProdukcji')->findAll();
 
-        return $this->render('AppBundle:Gatunek:index.html.twig', array(
+        return $this->render('AppBundle:RokProdukcji:index.html.twig', array(
             'entities' => $entities,
         ));
     }
     /**
-     * Creates a new Gatunek entity.
+     * Creates a new RokProdukcji entity.
      *
      */
     public function createAction(Request $request)
     {
-        $entity = new Gatunek();
+        $entity = new RokProdukcji();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
@@ -44,26 +44,26 @@ class GatunekController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('gatunek_show', array('id' => $entity->getIdgatunek())));
+            return $this->redirect($this->generateUrl('rokprodukcji_show', array('id' => $entity->getIdrokprodukcji())));
         }
 
-        return $this->render('AppBundle:Gatunek:new.html.twig', array(
+        return $this->render('AppBundle:RokProdukcji:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
     }
 
     /**
-     * Creates a form to create a Gatunek entity.
+     * Creates a form to create a RokProdukcji entity.
      *
-     * @param Gatunek $entity The entity
+     * @param RokProdukcji $entity The entity
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createCreateForm(Gatunek $entity)
+    private function createCreateForm(RokProdukcji $entity)
     {
-        $form = $this->createForm(new GatunekType(), $entity, array(
-            'action' => $this->generateUrl('gatunek_create'),
+        $form = $this->createForm(new RokProdukcjiType(), $entity, array(
+            'action' => $this->generateUrl('rokprodukcji_create'),
             'method' => 'POST',
         ));
 
@@ -73,60 +73,60 @@ class GatunekController extends Controller
     }
 
     /**
-     * Displays a form to create a new Gatunek entity.
+     * Displays a form to create a new RokProdukcji entity.
      *
      */
     public function newAction()
     {
-        $entity = new Gatunek();
+        $entity = new RokProdukcji();
         $form   = $this->createCreateForm($entity);
 
-        return $this->render('AppBundle:Gatunek:new.html.twig', array(
+        return $this->render('AppBundle:RokProdukcji:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
     }
 
     /**
-     * Finds and displays a Gatunek entity.
+     * Finds and displays a RokProdukcji entity.
      *
      */
     public function showAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('AppBundle:Gatunek')->find($id);
+        $entity = $em->getRepository('AppBundle:RokProdukcji')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Gatunek entity.');
+            throw $this->createNotFoundException('Unable to find RokProdukcji entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
 
-        return $this->render('AppBundle:Gatunek:show.html.twig', array(
+        return $this->render('AppBundle:RokProdukcji:show.html.twig', array(
             'entity'      => $entity,
             'delete_form' => $deleteForm->createView(),
         ));
     }
 
     /**
-     * Displays a form to edit an existing Gatunek entity.
+     * Displays a form to edit an existing RokProdukcji entity.
      *
      */
     public function editAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('AppBundle:Gatunek')->find($id);
+        $entity = $em->getRepository('AppBundle:RokProdukcji')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Gatunek entity.');
+            throw $this->createNotFoundException('Unable to find RokProdukcji entity.');
         }
 
         $editForm = $this->createEditForm($entity);
         $deleteForm = $this->createDeleteForm($id);
 
-        return $this->render('AppBundle:Gatunek:edit.html.twig', array(
+        return $this->render('AppBundle:RokProdukcji:edit.html.twig', array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
@@ -134,16 +134,16 @@ class GatunekController extends Controller
     }
 
     /**
-    * Creates a form to edit a Gatunek entity.
+    * Creates a form to edit a RokProdukcji entity.
     *
-    * @param Gatunek $entity The entity
+    * @param RokProdukcji $entity The entity
     *
     * @return \Symfony\Component\Form\Form The form
     */
-    private function createEditForm(Gatunek $entity)
+    private function createEditForm(RokProdukcji $entity)
     {
-        $form = $this->createForm(new GatunekType(), $entity, array(
-            'action' => $this->generateUrl('gatunek_update', array('id' => $entity->getId())),
+        $form = $this->createForm(new RokProdukcjiType(), $entity, array(
+            'action' => $this->generateUrl('rokprodukcji_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
@@ -152,17 +152,17 @@ class GatunekController extends Controller
         return $form;
     }
     /**
-     * Edits an existing Gatunek entity.
+     * Edits an existing RokProdukcji entity.
      *
      */
     public function updateAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('AppBundle:Gatunek')->find($id);
+        $entity = $em->getRepository('AppBundle:RokProdukcji')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Gatunek entity.');
+            throw $this->createNotFoundException('Unable to find RokProdukcji entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
@@ -172,17 +172,17 @@ class GatunekController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('gatunek_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('rokprodukcji_edit', array('id' => $id)));
         }
 
-        return $this->render('AppBundle:Gatunek:edit.html.twig', array(
+        return $this->render('AppBundle:RokProdukcji:edit.html.twig', array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
     /**
-     * Deletes a Gatunek entity.
+     * Deletes a RokProdukcji entity.
      *
      */
     public function deleteAction(Request $request, $id)
@@ -192,21 +192,21 @@ class GatunekController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('AppBundle:Gatunek')->find($id);
+            $entity = $em->getRepository('AppBundle:RokProdukcji')->find($id);
 
             if (!$entity) {
-                throw $this->createNotFoundException('Unable to find Gatunek entity.');
+                throw $this->createNotFoundException('Unable to find RokProdukcji entity.');
             }
 
             $em->remove($entity);
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('gatunek'));
+        return $this->redirect($this->generateUrl('rokprodukcji'));
     }
 
     /**
-     * Creates a form to delete a Gatunek entity by id.
+     * Creates a form to delete a RokProdukcji entity by id.
      *
      * @param mixed $id The entity id
      *
@@ -215,10 +215,12 @@ class GatunekController extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('gatunek_delete', array('id' => $id)))
+            ->setAction($this->generateUrl('rokprodukcji_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()
         ;
     }
+
+
 }

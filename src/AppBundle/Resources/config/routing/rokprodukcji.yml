@@ -1,0 +1,30 @@
+rokprodukcji:
+    path:     /
+    defaults: { _controller: "AppBundle:RokProdukcji:index" }
+
+rokprodukcji_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:RokProdukcji:show" }
+
+rokprodukcji_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:RokProdukcji:new" }
+
+rokprodukcji_create:
+    path:     /create
+    defaults: { _controller: "AppBundle:RokProdukcji:create" }
+    methods:  POST
+
+rokprodukcji_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:RokProdukcji:edit" }
+
+rokprodukcji_update:
+    path:     /{id}/update
+    defaults: { _controller: "AppBundle:RokProdukcji:update" }
+    methods:  [POST, PUT]
+
+rokprodukcji_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:RokProdukcji:delete" }
+    methods:  [POST, DELETE]

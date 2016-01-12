@@ -13,6 +13,6 @@ AppBundle\Entity\RokProdukcji:
                 strategy: IDENTITY
     fields:
         rok:
-            type: date
+            type: integer
             nullable: true
     lifecycleCallbacks: {  }

@@ -1,3 +1,7 @@
+app_rokprodukcji:
+    resource: "@AppBundle/Resources/config/routing/rokprodukcji.yml"
+    prefix:   /rokprodukcji
+
 app_rezyser:
     resource: "@AppBundle/Resources/config/routing/rezyser.yml"
     prefix:   /rezyser
@@ -53,4 +57,7 @@ ostronie:
     path:     /ostronie
     defaults: { _controller: AppBundle:ostronie:ostronie }
 
+search:
+    path:     /search
+    defaults: { _controller: AppBundle:Search:search } # bundle:kontroler(bez Controller):nazwa Funkcji(bez Action)
 
