@@ -101,36 +101,39 @@
 
                 function search(){
 
-                    var title=$("#search").val();
+                    var title=$("#search").val(); /*wpisuje do title value z #search*/
 
-                    if(title!=""){
+                    if(title!=""){ /*jesli cos wpisane to*/
                         //$("#result").html("<img alt="ajax search" src='ajax-loader.gif'/>");
                         $.ajax({
                             type:"post",
-                            url:"search",
+                            url:"/search",
                             data:"title="+title,
                             success:function(movies) {
                                 var results = "";
                                 $.each(movies, function() {
                                     $.each(this, function(i, movie) {
                                          //alert(movie['idFilm'] + "," + movie["tytul"]);
-                                        results += "<li><a href='movies/"+movie['idFilm']+"'>"+movie["tytul"]+"</a></li>";
+                                        results += "<li><a href={{ path('film') }}"+movie['idFilm']+"/show>"+movie["tytul"]+"</a></li>";
                                     });
                                 });
+
+                                /* TO-DO searching for books, and games  */
+
+
                                 $("#results").html(results);
                                 //alert(results+"");
                                 $("#results").css("display","block");
+
                             }
                         });
                     }
 
-
-
                 }
 
-                $("#button_search").click(function(){
+                /*$("#button_search").click(function(){
                     search();
-                });
+                });*/
 
                 $('#search').keyup(function(e) {
                     /*if(e.keyCode == 13) {
@@ -139,7 +142,12 @@
                     var s = $('#search').val();
                     if (s.length>1)
                         search();
-
+                    else
+                    {
+                        results="<li></li>";
+                        $("#results").html(results);
+                        $("#results").css("display","block");
+                    }
                 });
             });
         </script>

@@ -143,7 +143,7 @@ class RokProdukcjiController extends Controller
     private function createEditForm(RokProdukcji $entity)
     {
         $form = $this->createForm(new RokProdukcjiType(), $entity, array(
-            'action' => $this->generateUrl('rokprodukcji_update', array('id' => $entity->getId())),
+            'action' => $this->generateUrl('rokprodukcji_update', array('id' => $entity->getIdrokprodukcji())),
             'method' => 'PUT',
         ));
 

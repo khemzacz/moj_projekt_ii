@@ -1,3 +1,11 @@
+app_ocenauztkownikfilm:
+    resource: "@AppBundle/Resources/config/routing/ocenauztkownikfilm.yml"
+    prefix:   /ocenauztkownikfilm
+
+app_ocena:
+    resource: "@AppBundle/Resources/config/routing/ocena.yml"
+    prefix:   /ocena
+
 app_rokprodukcji:
     resource: "@AppBundle/Resources/config/routing/rokprodukcji.yml"
     prefix:   /rokprodukcji

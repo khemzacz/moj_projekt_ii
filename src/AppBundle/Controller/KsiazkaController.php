@@ -44,7 +44,7 @@ class KsiazkaController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('ksiazka_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('ksiazka_show', array('id' => $entity->getIdksiazka())));
         }
 
         return $this->render('AppBundle:Ksiazka:new.html.twig', array(

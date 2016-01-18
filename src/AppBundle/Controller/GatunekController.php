@@ -143,7 +143,7 @@ class GatunekController extends Controller
     private function createEditForm(Gatunek $entity)
     {
         $form = $this->createForm(new GatunekType(), $entity, array(
-            'action' => $this->generateUrl('gatunek_update', array('id' => $entity->getId())),
+            'action' => $this->generateUrl('gatunek_update', array('id' => $entity->getIdgatunek())),
             'method' => 'PUT',
         ));
 

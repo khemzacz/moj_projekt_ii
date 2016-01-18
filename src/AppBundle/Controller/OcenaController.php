@@ -5,37 +5,37 @@ namespace AppBundle\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-use AppBundle\Entity\Producent;
-use AppBundle\Form\ProducentType;
+use AppBundle\Entity\Ocena;
+use AppBundle\Form\OcenaType;
 
 /**
- * Producent controller.
+ * Ocena controller.
  *
  */
-class ProducentController extends Controller
+class OcenaController extends Controller
 {
 
     /**
-     * Lists all Producent entities.
+     * Lists all Ocena entities.
      *
      */
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('AppBundle:Producent')->findAll();
+        $entities = $em->getRepository('AppBundle:Ocena')->findAll();
 
-        return $this->render('AppBundle:Producent:index.html.twig', array(
+        return $this->render('AppBundle:Ocena:index.html.twig', array(
             'entities' => $entities,
         ));
     }
     /**
-     * Creates a new Producent entity.
+     * Creates a new Ocena entity.
      *
      */
     public function createAction(Request $request)
     {
-        $entity = new Producent();
+        $entity = new Ocena();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
@@ -44,26 +44,26 @@ class ProducentController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('producent_show', array('id' => $entity->getIdproducent())));
+            return $this->redirect($this->generateUrl('ocena_show', array('id' => $entity->getIdocena())));
         }
 
-        return $this->render('AppBundle:Producent:new.html.twig', array(
+        return $this->render('AppBundle:Ocena:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
     }
 
     /**
-     * Creates a form to create a Producent entity.
+     * Creates a form to create a Ocena entity.
      *
-     * @param Producent $entity The entity
+     * @param Ocena $entity The entity
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createCreateForm(Producent $entity)
+    private function createCreateForm(Ocena $entity)
     {
-        $form = $this->createForm(new ProducentType(), $entity, array(
-            'action' => $this->generateUrl('producent_create'),
+        $form = $this->createForm(new OcenaType(), $entity, array(
+            'action' => $this->generateUrl('ocena_create'),
             'method' => 'POST',
         ));
 
@@ -73,60 +73,60 @@ class ProducentController extends Controller
     }
 
     /**
-     * Displays a form to create a new Producent entity.
+     * Displays a form to create a new Ocena entity.
      *
      */
     public function newAction()
     {
-        $entity = new Producent();
+        $entity = new Ocena();
         $form   = $this->createCreateForm($entity);
 
-        return $this->render('AppBundle:Producent:new.html.twig', array(
+        return $this->render('AppBundle:Ocena:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
     }
 
     /**
-     * Finds and displays a Producent entity.
+     * Finds and displays a Ocena entity.
      *
      */
     public function showAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('AppBundle:Producent')->find($id);
+        $entity = $em->getRepository('AppBundle:Ocena')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Producent entity.');
+            throw $this->createNotFoundException('Unable to find Ocena entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
 
-        return $this->render('AppBundle:Producent:show.html.twig', array(
+        return $this->render('AppBundle:Ocena:show.html.twig', array(
             'entity'      => $entity,
             'delete_form' => $deleteForm->createView(),
         ));
     }
 
     /**
-     * Displays a form to edit an existing Producent entity.
+     * Displays a form to edit an existing Ocena entity.
      *
      */
     public function editAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('AppBundle:Producent')->find($id);
+        $entity = $em->getRepository('AppBundle:Ocena')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Producent entity.');
+            throw $this->createNotFoundException('Unable to find Ocena entity.');
         }
 
         $editForm = $this->createEditForm($entity);
         $deleteForm = $this->createDeleteForm($id);
 
-        return $this->render('AppBundle:Producent:edit.html.twig', array(
+        return $this->render('AppBundle:Ocena:edit.html.twig', array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
@@ -134,16 +134,16 @@ class ProducentController extends Controller
     }
 
     /**
-    * Creates a form to edit a Producent entity.
+    * Creates a form to edit a Ocena entity.
     *
-    * @param Producent $entity The entity
+    * @param Ocena $entity The entity
     *
     * @return \Symfony\Component\Form\Form The form
     */
-    private function createEditForm(Producent $entity)
+    private function createEditForm(Ocena $entity)
     {
-        $form = $this->createForm(new ProducentType(), $entity, array(
-            'action' => $this->generateUrl('producent_update', array('id' => $entity->getId())),
+        $form = $this->createForm(new OcenaType(), $entity, array(
+            'action' => $this->generateUrl('ocena_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
@@ -152,17 +152,17 @@ class ProducentController extends Controller
         return $form;
     }
     /**
-     * Edits an existing Producent entity.
+     * Edits an existing Ocena entity.
      *
      */
     public function updateAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('AppBundle:Producent')->find($id);
+        $entity = $em->getRepository('AppBundle:Ocena')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Producent entity.');
+            throw $this->createNotFoundException('Unable to find Ocena entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
@@ -172,17 +172,17 @@ class ProducentController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('producent_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('ocena_edit', array('id' => $id)));
         }
 
-        return $this->render('AppBundle:Producent:edit.html.twig', array(
+        return $this->render('AppBundle:Ocena:edit.html.twig', array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
     /**
-     * Deletes a Producent entity.
+     * Deletes a Ocena entity.
      *
      */
     public function deleteAction(Request $request, $id)
@@ -192,21 +192,21 @@ class ProducentController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('AppBundle:Producent')->find($id);
+            $entity = $em->getRepository('AppBundle:Ocena')->find($id);
 
             if (!$entity) {
-                throw $this->createNotFoundException('Unable to find Producent entity.');
+                throw $this->createNotFoundException('Unable to find Ocena entity.');
             }
 
             $em->remove($entity);
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('producent'));
+        return $this->redirect($this->generateUrl('ocena'));
     }
 
     /**
-     * Creates a form to delete a Producent entity by id.
+     * Creates a form to delete a Ocena entity by id.
      *
      * @param mixed $id The entity id
      *
@@ -215,7 +215,7 @@ class ProducentController extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('producent_delete', array('id' => $id)))
+            ->setAction($this->generateUrl('ocena_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()

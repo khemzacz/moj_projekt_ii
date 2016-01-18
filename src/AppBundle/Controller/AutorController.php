@@ -44,7 +44,7 @@ class AutorController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('autor_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('autor_show', array('id' => $entity->getIdautor())));
         }
 
         return $this->render('AppBundle:Autor:new.html.twig', array(

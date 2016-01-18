@@ -44,7 +44,7 @@ class DeweloperController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('deweloper_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('deweloper_show', array('id' => $entity->getIddeweloper())));
         }
 
         return $this->render('AppBundle:Deweloper:new.html.twig', array(

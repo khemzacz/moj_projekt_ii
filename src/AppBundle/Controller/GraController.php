@@ -44,7 +44,7 @@ class GraController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('gra_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('gra_show', array('id' => $entity->getIdgra())));
         }
 
         return $this->render('AppBundle:Gra:new.html.twig', array(
